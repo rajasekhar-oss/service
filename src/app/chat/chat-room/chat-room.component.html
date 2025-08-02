@@ -1,0 +1,24 @@
+<div class="chat-room-page">
+  <div class="chat-header card" *ngIf="participant">
+    <img [src]="participant.photoUrl || 'assets/users/default.jpg'" class="chat-avatar" [alt]="participant.name" />
+    <div class="chat-participant">
+      <span class="name">{{ participant.name }}</span>
+    </div>
+  </div>
+  <div class="messages-list card" *ngIf="!loading">
+    <div *ngFor="let msg of messages" [ngClass]="{
+      'message-row': true,
+      'msg-own': msg.senderId === currentUser.id
+    }">
+      <div class="msg-bubble">
+        <span class="msg-content">{{ msg.content }}</span>
+        <span class="msg-time">{{ msg.timestamp | date:'shortTime' }}</span>
+      </div>
+    </div>
+    <div *ngIf="messages.length === 0" class="no-msgs">No messages yet.</div>
+  </div>
+  <form class="send-bar" [formGroup]="sendForm" (ngSubmit)="sendMessage()" autocomplete="off">
+    <input placeholder="Type a message…" formControlName="content" autocomplete="off" />
+    <button type="submit" [disabled]="!sendForm.value.content?.trim()">Send</button>
+  </form>
+</div>

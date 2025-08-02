@@ -1,0 +1,43 @@
+<div class="profile-view">
+  <div *ngIf="loading" class="loading-msg">Loading…</div>
+  <ng-container *ngIf="!loading && user">
+    <div class="profile-card card">
+      <img [src]="user.photoUrl || 'assets/users/default.jpg'" class="profile-photo" [alt]="user.name">
+      <div class="profile-info">
+        <h2 class="user-name">{{ user.name }}</h2>
+        <div class="role-badge" [ngClass]="{
+          'provider': user.role === 'provider',
+          'seeker': user.role === 'seeker',
+          'admin': user.role === 'admin'
+        }">
+          {{ user.role | titlecase }}
+        </div>
+        <div class="user-bio" *ngIf="user.bio">{{ user.bio }}</div>
+        <div class="user-location" *ngIf="user.location">
+          <span class="icon">&#x1F4CD;</span> {{ user.location }}
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="user.role === 'provider'" class="user-skills-section">
+      <h3>Skills/Services Offered</h3>
+      <div *ngIf="skills.length === 0" class="empty-msg">No skills or services listed yet.</div>
+      <div class="skills-list" *ngIf="skills.length">
+        <div class="skill-card card" *ngFor="let s of skills">
+          <img [src]="s.imageUrl" [alt]="s.title" class="skill-photo">
+          <div class="skill-meta">
+            <span class="skill-type-badge" [ngClass]="{
+              'badge-service': s.type === 'do',
+              'badge-session': s.type === 'teach'
+            }">{{ s.type === 'do' ? 'Service' : 'Session' }}</span>
+            <span class="skill-title">{{ s.title }}</span>
+            <span class="category">({{ s.category || 'General' }})</span>
+            <span class="price">₹{{ s.price }}</span>
+            <span *ngIf="s.rating" class="rating">&#11088; {{ s.rating }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <div *ngIf="!loading && !user" class="empty-msg">User not found.</div>
+</div>

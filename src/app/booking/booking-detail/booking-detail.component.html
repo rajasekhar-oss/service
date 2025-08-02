@@ -1,0 +1,54 @@
+<div class="booking-detail-page">
+  <h2>Booking Details</h2>
+  <div *ngIf="loading" class="loading-msg">Loading…</div>
+  <div *ngIf="!loading && booking && skill && seeker && provider">
+    <div class="booking-main card">
+      <img [src]="skill.imageUrl" [alt]="skill.title" class="skill-img" />
+      <div class="booking-info">
+        <div>
+          <span class="type-badge"
+            [ngClass]="{
+              'badge-service': skill.type === 'do',
+              'badge-session': skill.type === 'teach'
+            }">
+            {{ skill.type === 'do' ? 'Service' : 'Session' }}
+          </span>
+          <span class="skill-title">{{ skill.title }}</span>
+        </div>
+        <div class="skill-price">
+          <span>₹{{ skill.price }}</span>
+        </div>
+        <div class="booking-date"><b>Date:</b> {{ booking.date | date:'medium' }}</div>
+        <div class="booking-status"
+          [ngClass]="{
+            'status-confirmed': booking.status==='confirmed',
+            'status-completed': booking.status==='completed',
+            'status-pending': booking.status!=='confirmed' && booking.status!=='completed'
+          }">
+          <b>Status:</b> {{ booking.status | titlecase }}
+        </div>
+      </div>
+    </div>
+    <div class="booking-users">
+      <div class="user-card card">
+        <img [src]="seeker.photoUrl || 'assets/users/default.jpg'" class="user-photo" [alt]="seeker.name" />
+        <div class="user-info">
+          <span class="role-badge seeker-badge">Seeker</span>
+          <span class="user-name">{{ seeker.name }}</span>
+          <span class="user-phone" *ngIf="seeker.phone">&#x1F4F1; {{ seeker.phone }}</span>
+        </div>
+      </div>
+      <div class="user-card card">
+        <img [src]="provider.photoUrl || 'assets/users/default.jpg'" class="user-photo" [alt]="provider.name" />
+        <div class="user-info">
+          <span class="role-badge provider-badge">Provider</span>
+          <span class="user-name">{{ provider.name }}</span>
+          <span class="user-phone" *ngIf="provider.phone">&#x1F4F1; {{ provider.phone }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!loading && (!booking || !skill)" class="empty-msg">
+    Booking not found.
+  </div>
+</div>

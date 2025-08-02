@@ -1,1 +1,94 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* Color palette: SkillSync Hyderabad theme */
+  --primary: #3751ff;
+  --primary-dark: #2531a3;
+  --accent: #ffc043;
+  --background: #f2f6ff;
+  --background-light: #ffffff;
+  --background-dark: #161b22;
+  --surface: #f9f9fc;
+  --text: #23272f;
+  --text-light: #fafafa;
+  --success: #00b87b;
+  --danger: #ef4b5b;
+  --border: #e1e8f0;
+  --card-border: #d3daf5;
+}
+
+/* Dark mode variables will override defaults when .dark-mode is set on <body> */
+body.dark-mode {
+  --background: #1a1d28;
+  --background-light: #23272f;
+  --background-dark: #161b22;
+  --surface: #232b43;
+  --text: #fafafa;
+  --card-border: #252b44;
+}
+
+/* Base resets and global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.button,
+button {
+  background: var(--primary);
+  color: var(--text-light);
+  border: none;
+  border-radius: 0.8rem;
+  padding: 0.9rem 2rem;
+  font-size: 1.07rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.button:hover,
+button:hover {
+  background: var(--primary-dark);
+}
+
+.card {
+  background: var(--background-light);
+  border: 1px solid var(--card-border);
+  border-radius: 1.2rem;
+  padding: 1.7rem 1.4rem;
+  box-shadow: 0 2px 14px 0 rgba(80, 80, 120, 0.07);
+  margin-bottom: 2rem;
+  transition: background 0.3s, border 0.3s;
+}
+
+body.dark-mode .card {
+  background: var(--background-dark);
+  border: 1px solid var(--card-border);
+}
+
+input, select, textarea {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.9rem 1.3rem;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--background-light);
+  margin-bottom: 1rem;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background: var(--background-dark);
+  color: var(--text);
+  border: 1px solid var(--card-border);
+}

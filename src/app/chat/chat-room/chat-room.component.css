@@ -1,0 +1,101 @@
+.chat-room-page {
+  max-width: 650px;
+  margin: 2.5rem auto 0 auto;
+  padding: 1.2rem 2vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.3rem;
+  margin-bottom: 0.7rem;
+}
+.chat-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.4px solid var(--primary);
+  background: var(--surface);
+}
+.chat-participant .name {
+  font-size: 1.11rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.messages-list {
+  flex: 1;
+  min-height: 260px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  overflow-y: auto;
+  background: var(--background-light);
+}
+.message-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.message-row.msg-own {
+  justify-content: flex-end;
+}
+.msg-bubble {
+  max-width: 72%;
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 1.2rem;
+  padding: 0.57rem 1.18rem;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  box-shadow: 0 2px 9px 0 rgba(60,70,110,0.07);
+  position: relative;
+  word-break: break-word;
+}
+.message-row.msg-own .msg-bubble {
+  background: var(--primary);
+  color: var(--text-light);
+  border-bottom-right-radius: 0.6rem;
+}
+.message-row:not(.msg-own) .msg-bubble {
+  background: var(--surface);
+  color: var(--primary-dark);
+  border-bottom-left-radius: 0.6rem;
+}
+.msg-time {
+  font-size: 0.83rem;
+  color: var(--primary-dark);
+  margin-left: 1rem;
+}
+.no-msgs {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--danger);
+  margin: 2rem auto;
+}
+.send-bar {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.send-bar input {
+  flex: 1;
+  font-size: 1.1rem;
+  border-radius: 0.7rem;
+  border: 1.5px solid var(--border);
+  padding: 0.75rem 1.2rem;
+}
+.send-bar button[type="submit"] {
+  padding: 0.7rem 2.1rem;
+  font-size: 1.05rem;
+}
+@media (max-width: 500px) {
+  .chat-room-page { padding: 0.3rem 0.2rem;}
+  .chat-header, .messages-list { padding: 0.7rem;}
+  .msg-bubble { max-width: 89%; }
+}

@@ -1,0 +1,39 @@
+<div class="landing-hero">
+  <div class="splash">
+    <img src="assets/logo.png" alt="SkillSync Hyderabad" class="logo">
+    <h1>SkillSync Hyderabad</h1>
+    <p class="intro">
+      Find the best local services, or learn a new skill from trusted experts.
+    </p>
+    <div class="cta-row">
+      <button (click)="goTo('service')">Find a Service</button>
+      <button (click)="goTo('learn')">Learn a Skill</button>
+      <button (click)="goTo('provider')">Become a Provider</button>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Featured Skills</h2>
+  <div class="card-grid">
+    <ng-container *ngIf="featuredListings.length; else loading">
+      <app-skill-listing-card
+        *ngFor="let listing of featuredListings"
+        [listing]="listing">
+      </app-skill-listing-card>
+    </ng-container>
+    <ng-template #loading>
+      <span>Loading skills...</span>
+    </ng-template>
+  </div>
+</div>
+
+<div class="section testimonial-section">
+  <h2>What our users say</h2>
+  <div class="testimonial-carousel">
+    <div class="testimonial-card" *ngFor="let t of testimonials">
+      <blockquote>{{ t.quote }}</blockquote>
+      <span class="testi-name">&#8212; {{ t.name }}</span>
+    </div>
+  </div>
+</div>

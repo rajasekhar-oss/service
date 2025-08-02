@@ -1,0 +1,40 @@
+<div class="dashboard-container">
+  <h2>Welcome, {{ currentUser.name || 'Seeker' }}</h2>
+  <div class="dashboard-section">
+    <h3>My Recent Bookings</h3>
+    <div *ngIf="loading">Loading...</div>
+    <div *ngIf="!loading && myBookings.length === 0" class="empty-msg">
+      You haven't booked any services or classes yet.
+    </div>
+    <div class="bookings-list" *ngIf="!loading && myBookings.length">
+      <div class="booking-card card" *ngFor="let booking of myBookings">
+        <img [src]="bookingSkills[booking.skillId].imageUrl" 
+             [alt]="bookingSkills[booking.skillId].title" class="skill-thumb">
+        <div class="booking-info">
+          <div>
+            <span class="skill-type-badge" [ngClass]="{
+              'badge-service': bookingSkills[booking.skillId].type === 'do',
+              'badge-session': bookingSkills[booking.skillId].type === 'teach'
+            }">
+            {{ bookingSkills[booking.skillId].type === 'do' ? 'Service' : 'Session' }}
+            </span>
+            <span class="skill-title" (click)="goToSkill(booking.skillId)">
+              {{ bookingSkills[booking.skillId].title }}
+            </span>
+          </div>
+          <div>
+            <span class="booking-date">{{ booking.date | date:'medium' }}</span>
+            <span class="booking-status" [ngClass]="{
+              'status-confirmed': booking.status==='confirmed',
+              'status-completed': booking.status==='completed',
+              'status-pending': booking.status!=='confirmed' && booking.status!=='completed'
+            }">{{ booking.status | titlecase }}</span>
+            <button class="view-booking-btn" (click)="goToBooking(booking.id)">
+              Booking Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

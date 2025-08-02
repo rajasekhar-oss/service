@@ -1,0 +1,14 @@
+<div class="card skill-card">
+  <img [src]="listing.imageUrl" [alt]="listing.title" class="skill-img">
+  <div class="skill-info">
+    <h3>{{ listing.title }}</h3>
+    <p>{{ listing.description }}</p>
+    <span class="badge" [ngClass]="{
+        'badge-service': listing.type === 'do',
+        'badge-session': listing.type === 'teach'
+      }">
+      {{ listing.type === 'do' ? 'Service' : 'Session' }}
+    </span>
+    <a [routerLink]="['/skills', listing.id]" class="button view-btn">View</a>
+  </div>
+</div>

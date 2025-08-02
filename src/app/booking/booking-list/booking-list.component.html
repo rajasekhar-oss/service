@@ -1,0 +1,29 @@
+<div class="booking-list-page">
+  <h2>My Bookings</h2>
+  <div *ngIf="loading" class="loading-msg">Loading…</div>
+  <div *ngIf="!loading && bookings.length === 0" class="empty-msg">
+    You have no bookings yet.
+  </div>
+  <div class="bookings-grid" *ngIf="!loading && bookings.length">
+    <div class="booking-card card" *ngFor="let booking of bookings">
+      <img [src]="skills[booking.skillId].imageUrl" [alt]="skills[booking.skillId].title" class="skill-img">
+      <div class="booking-meta">
+        <span class="type-badge"
+          [ngClass]="{
+            'badge-service': skills[booking.skillId].type === 'do',
+            'badge-session': skills[booking.skillId].type === 'teach'
+          }">
+          {{ skills[booking.skillId].type === 'do' ? 'Service' : 'Session' }}
+        </span>
+        <span class="title">{{ skills[booking.skillId].title || 'Unknown Skill' }}</span>
+        <div class="booking-date">{{ booking.date | date:'medium' }}</div>
+        <span class="booking-status" [ngClass]="{
+          'status-confirmed': booking.status==='confirmed',
+          'status-completed': booking.status==='completed',
+          'status-pending': booking.status!=='confirmed' && booking.status!=='completed'
+        }">{{ booking.status | titlecase }}</span>
+        <button class="details-btn" (click)="goToBooking(booking.id)">Details</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="skills-list-page">
+  <h2>Find Skills & Services</h2>
+  <div class="list-filters">
+    <input placeholder="Search for a skill/service..." [(ngModel)]="search" (input)="applyFilters()">
+    <select (change)="filterCategory($event)">
+      <option value="all">All Categories</option>
+      <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+    </select>
+  </div>
+  <div class="list-options">
+    <button [class.active]="filter==='all'" (click)="filter='all';applyFilters()">All</button>
+    <button [class.active]="filter==='Food & Catering'" (click)="filter='Food & Catering';applyFilters()">Food/Catering</button>
+    <button [class.active]="filter==='Home Repairs'" (click)="filter='Home Repairs';applyFilters()">Repairs</button>
+    <button [class.active]="filter==='Education'" (click)="filter='Education';applyFilters()">Education</button>
+    <button [class.active]="filter==='Music'" (click)="filter='Music';applyFilters()">Music</button>
+    <!-- add more buttons if more categories -->
+  </div>
+  <div *ngIf="loading" class="loading-msg">Loading...</div>
+  <div *ngIf="!loading && skills.length === 0" class="empty-msg">No skills or services found for your search.</div>
+  <div class="card-grid">
+    <app-skill-listing-card *ngFor="let skill of skills" [listing]="skill"></app-skill-listing-card>
+  </div>
+</div>

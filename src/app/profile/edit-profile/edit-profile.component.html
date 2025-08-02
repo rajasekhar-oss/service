@@ -1,0 +1,31 @@
+<div class="edit-profile-container card">
+  <h2>Edit Profile</h2>
+  <form [formGroup]="editForm" (ngSubmit)="save()">
+    <label>Name</label>
+    <input formControlName="name" maxlength="30" required
+      [class.invalid]="editForm.get('name')?.invalid && (editForm.get('name')?.dirty || editForm.get('name')?.touched)">
+
+    <label>Bio</label>
+    <textarea formControlName="bio" maxlength="120" rows="2"></textarea>
+
+    <label>Location</label>
+    <input formControlName="location" maxlength="50">
+
+    <label>Photo URL</label>
+    <input formControlName="photoUrl" maxlength="150">
+    <div class="photo-preview" *ngIf="editForm.value.photoUrl">
+      <img [src]="editForm.value.photoUrl" alt="profile photo" />
+    </div>
+
+    <button type="submit" [disabled]="loading">Save Changes</button>
+    <span *ngIf="saveMsg" class="success-msg">{{ saveMsg }}</span>
+    <span *ngIf="error" class="err-msg">{{ error }}</span>
+  </form>
+
+  <div class="settings-section">
+    <span>Theme:</span>
+    <button class="theme-btn" type="button" (click)="toggleTheme()">
+      {{ themeService.isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode" }}
+    </button>
+  </div>
+</div>

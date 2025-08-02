@@ -1,0 +1,351 @@
+{
+  "users": [
+    {
+      "id": "101",
+      "role": "provider",
+      "name": "Asha Kumar",
+      "photoUrl": "assets/users/asha.jpg",
+      "bio": "Home baker with 12+ years experience in custom cakes.",
+      "location": "Secunderabad",
+      "skillsOffered": [
+        1,
+        5
+      ],
+      "ratings": 4.7,
+      "reviews": [
+        201,
+        205
+      ],
+      "email": "asha@example.com",
+      "phone": "7776655441",
+      "verified": true,
+      "password":"123456@A"
+    },
+    {
+      "id": "102",
+      "role": "provider",
+      "name": "Imran Sheikh",
+      "photoUrl": "assets/users/imran.jpg",
+      "bio": "Certified electrician for homes and offices.",
+      "location": "Banjara Hills",
+      "skillsOffered": [
+        2
+      ],
+      "ratings": 4.9,
+      "reviews": [
+        202,
+        206
+      ],
+      "email": "imran@fixit.com",
+      "phone": "9996551122",
+      "verified": true
+    },
+    {
+      "id": "201",
+      "role": "seeker",
+      "name": "Vikram Tiwari",
+      "photoUrl": "assets/users/vikram.jpg",
+      "bio": "Foodie & startup enthusiast.",
+      "location": "HITEC City",
+      "bookings": [
+        501,
+        505
+      ],
+      "reviews": [
+        201,
+        202
+      ],
+      "email": "vikramt@xyzmail.com",
+      "phone": "8855665543"
+    },
+    {
+      "id": "202",
+      "role": "seeker",
+      "name": "Pavani Rao",
+      "photoUrl": "assets/users/pavani.jpg",
+      "bio": "Aspiring guitarist and photographer.",
+      "location": "Madhapur",
+      "bookings": [
+        502,
+        503
+      ],
+      "reviews": [
+        203,
+        204
+      ],
+      "email": "pavani.raox@gmail.com",
+      "phone": "8123450987"
+    },
+    {
+      "id": "1bd8",
+      "name": "rajasekhar",
+      "email": "test@example.com",
+      "password": "123456",
+      "role": "provider"
+    }
+  ],
+  "skills": [
+    {
+      "id": "1",
+      "title": "Custom Birthday Cake",
+      "description": "Eggless, themed cakes baked to order. Delivery available.",
+      "category": "Food & Catering",
+      "type": "do",
+      "providerId": 101,
+      "price": 1500,
+      "imageUrl": "assets/skills/cake.jpg",
+      "availability": [
+        "2025-08-01T10:00:00",
+        "2025-08-03T14:00:00"
+      ],
+      "rating": 4.8,
+      "reviews": [
+        201,
+        205
+      ],
+      "location": "Secunderabad"
+    },
+    {
+      "id": "5",
+      "title": "Cake Baking Masterclass",
+      "description": "Learn hands-on baking in a 3-hour session. Demo & practice.",
+      "category": "Education",
+      "type": "teach",
+      "providerId": 101,
+      "price": 700,
+      "imageUrl": "assets/skills/baking-class.jpg",
+      "schedule": [
+        "2025-08-05T16:00:00",
+        "2025-08-08T11:00:00"
+      ],
+      "rating": 4.7,
+      "reviews": [
+        203
+      ],
+      "location": "Secunderabad",
+      "maxAttendees": 8
+    },
+    {
+      "id": "2",
+      "title": "Home Wiring & Repairs",
+      "description": "Fast, reliable home and office electrical repairs.",
+      "category": "Home Repairs",
+      "type": "do",
+      "providerId": 102,
+      "price": 400,
+      "imageUrl": "assets/skills/electrician.jpg",
+      "availability": [
+        "2025-07-31T09:00:00",
+        "2025-08-02T14:00:00"
+      ],
+      "rating": 4.9,
+      "reviews": [
+        202,
+        206
+      ],
+      "location": "Banjara Hills"
+    },
+    {
+      "id": "7",
+      "title": "Learn Electric Basics",
+      "description": "DIY kit included, live demo for safe home wires & appliances.",
+      "category": "Education",
+      "type": "teach",
+      "providerId": 102,
+      "price": 1200,
+      "imageUrl": "assets/skills/electrician-class.jpg",
+      "schedule": [
+        "2025-08-10T15:00:00"
+      ],
+      "rating": 4.8,
+      "reviews": [],
+      "location": "Banjara Hills",
+      "maxAttendees": 12
+    },
+    {
+      "id": "8",
+      "title": "Guitar Lessons (4-Week Course)",
+      "description": "From basic chords to first songs – beginners welcome.",
+      "category": "Music",
+      "type": "teach",
+      "providerId": 110,
+      "price": 2500,
+      "imageUrl": "assets/skills/guitar.jpg",
+      "schedule": [
+        "2025-08-03T17:00:00",
+        "2025-08-07T17:00:00"
+      ],
+      "rating": 5,
+      "reviews": [
+        204
+      ],
+      "location": "Ameerpet",
+      "maxAttendees": 10
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Food & Catering"
+    },
+    {
+      "id": "2",
+      "name": "Home Repairs"
+    },
+    {
+      "id": "3",
+      "name": "Education"
+    },
+    {
+      "id": "4",
+      "name": "Music"
+    },
+    {
+      "id": "5",
+      "name": "Photography"
+    },
+    {
+      "id": "6",
+      "name": "Events"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "501",
+      "skillId": 1,
+      "seekerId": 201,
+      "providerId": 101,
+      "date": "2025-08-01T10:00:00",
+      "status": "confirmed",
+      "paymentId": 701,
+      "createdAt": "2025-07-29T15:00:00"
+    },
+    {
+      "id": "502",
+      "skillId": 2,
+      "seekerId": 202,
+      "providerId": 102,
+      "date": "2025-07-31T09:00:00",
+      "status": "completed",
+      "paymentId": 702,
+      "createdAt": "2025-07-27T12:14:00"
+    },
+    {
+      "id": "505",
+      "skillId": 8,
+      "seekerId": 201,
+      "providerId": 110,
+      "date": "2025-08-03T17:00:00",
+      "status": "confirmed",
+      "paymentId": 705,
+      "createdAt": "2025-07-30T13:20:00"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "201",
+      "fromUserId": 201,
+      "toUserId": 101,
+      "skillId": 1,
+      "stars": 5,
+      "comment": "The cake was beautiful and delicious. Highly recommended!",
+      "date": "2025-08-02"
+    },
+    {
+      "id": "202",
+      "fromUserId": 201,
+      "toUserId": 102,
+      "skillId": 2,
+      "stars": 5,
+      "comment": "Quick fix—Imran is super polite and on time.",
+      "date": "2025-07-31"
+    },
+    {
+      "id": "203",
+      "fromUserId": 202,
+      "toUserId": 101,
+      "skillId": 5,
+      "stars": 4,
+      "comment": "Fun baking class, would join again!",
+      "date": "2025-08-05"
+    },
+    {
+      "id": "204",
+      "fromUserId": 202,
+      "toUserId": 110,
+      "skillId": 8,
+      "stars": 5,
+      "comment": "Learnt to play my first song in 2 days!",
+      "date": "2025-08-04"
+    },
+    {
+      "id": "205",
+      "fromUserId": 204,
+      "toUserId": 101,
+      "skillId": 1,
+      "stars": 4,
+      "comment": "Cake design was great. Taste was good but a bit sweet for me.",
+      "date": "2025-08-05"
+    },
+    {
+      "id": "206",
+      "fromUserId": 205,
+      "toUserId": 102,
+      "skillId": 2,
+      "stars": 5,
+      "comment": "Solved wiring issue in 20 minutes only!",
+      "date": "2025-08-01"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "1",
+      "quote": "Found a wonderful baker near me within minutes—and she even taught me her recipe!",
+      "name": "Anjali S."
+    },
+    {
+      "id": "2",
+      "quote": "I was able to get my room’s wiring fixed same day through SkillSync.",
+      "name": "Ravinder G."
+    },
+    {
+      "id": "3",
+      "quote": "Amazing guitar classes at reasonable prices. Highly recommended app.",
+      "name": "Samyukta R."
+    }
+  ],
+  "payments": [
+    {
+      "id": "701",
+      "bookingId": 501,
+      "amount": 1500,
+      "mode": "UPI",
+      "status": "paid",
+      "date": "2025-07-29T15:05:00"
+    },
+    {
+      "id": "702",
+      "bookingId": 502,
+      "amount": 400,
+      "mode": "Cash",
+      "status": "paid",
+      "date": "2025-07-30T13:10:00"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "userId": 201,
+      "message": "Your booking for 'Birthday Cake' is confirmed for 2025-08-01 10:00 AM.",
+      "type": "booking",
+      "date": "2025-07-29T16:00:00"
+    },
+    {
+      "id": "2",
+      "userId": 101,
+      "message": "You received a new review from Vikram Tiwari.",
+      "type": "review",
+      "date": "2025-08-02T16:02:00"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<div class="contact-page card">
+  <h2>Contact Us</h2>
+  <p class="desc">
+    Have a question, issue, or suggestion? Fill out the form below and our team will get in touch!
+  </p>
+  <form [formGroup]="form" (ngSubmit)="send()">
+    <label>Your Name</label>
+    <input formControlName="name" [class.invalid]="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)" maxlength="32">
+
+    <label>Your Email</label>
+    <input formControlName="email" type="email" [class.invalid]="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)" maxlength="50">
+
+    <label>Subject</label>
+    <input formControlName="subject" maxlength="50" [class.invalid]="form.get('subject')?.invalid && (form.get('subject')?.dirty || form.get('subject')?.touched)">
+
+    <label>Message</label>
+    <textarea formControlName="message" rows="4" maxlength="600" [class.invalid]="form.get('message')?.invalid && (form.get('message')?.dirty || form.get('message')?.touched)"></textarea>
+
+    <button type="submit" [disabled]="loading">Send</button>
+    <span *ngIf="loading" class="loading-msg">Sending…</span>
+    <span *ngIf="submitted" class="success-msg">Your message has been sent! We'll reply soon.</span>
+    <span *ngIf="error" class="err-msg">{{ error }}</span>
+  </form>
+</div>

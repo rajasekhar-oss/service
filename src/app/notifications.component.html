@@ -1,0 +1,22 @@
+<div class="notif-page">
+  <h2>Notifications</h2>
+  <div *ngIf="loading" class="loading-msg">Loading…</div>
+  <div *ngIf="!loading && notifs.length === 0" class="empty-msg">
+    No new notifications yet.
+  </div>
+  <div *ngIf="!loading && notifs.length">
+    <div class="notif-list">
+      <div class="notif-card card" *ngFor="let n of notifs">
+        <span class="notif-type" [ngClass]="{
+          'notif-booking': n.type === 'booking',
+          'notif-review': n.type === 'review',
+          'notif-general': n.type !== 'booking' && n.type !== 'review'
+        }">
+          {{ n.type | titlecase }}
+        </span>
+        <span class="notif-msg">{{ n.message }}</span>
+        <span class="notif-time">{{ n.date | date:'medium' }}</span>
+      </div>
+    </div>
+  </div>
+</div>

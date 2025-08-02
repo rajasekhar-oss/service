@@ -1,0 +1,31 @@
+<div class="chat-list-page">
+  <h2>My Chats</h2>
+  <div *ngIf="loading" class="loading-msg">Loading…</div>
+  <div *ngIf="!loading && myChats.length === 0" class="empty-msg">
+    No conversations yet. Book or provide a service to start chatting!
+  </div>
+  <div class="chats-list" *ngIf="!loading && myChats.length">
+    <div class="chat-preview card" *ngFor="let chat of myChats" (click)="openChat(chat.id)">
+      <ng-container *ngIf="chat.otherId !== null">
+        <img class="chat-avatar"
+          [src]="users[chat.otherId]?.photoUrl || 'assets/users/default.jpg'"
+          [alt]="users[chat.otherId]?.name || 'User'"
+        />
+        <div class="preview-meta">
+          <div class="chat-name">
+            {{ users[chat.otherId]?.name || ('User #'+chat.otherId) }}
+          </div>
+          <div class="chat-message">
+            {{ chat.lastMessage }}
+          </div>
+        </div>
+        <div class="chat-time">
+          {{ chat.lastTimestamp | date:'short' }}
+        </div>
+      </ng-container>
+      <ng-container *ngIf="chat.otherId === null">
+        <div class="chat-message">Unknown chat participant</div>
+      </ng-container>
+    </div>
+  </div>
+</div>

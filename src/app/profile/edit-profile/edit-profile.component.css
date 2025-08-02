@@ -1,0 +1,79 @@
+.edit-profile-container {
+  max-width: 420px;
+  margin: 3rem auto 0 auto;
+}
+h2 {
+  text-align: center;
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+label {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-top: 0.7rem;
+  margin-bottom: 0.1rem;
+}
+input[type="text"], textarea {
+  width: 100%;
+  font-size: 1.07rem;
+  border: 1.5px solid var(--border);
+  border-radius: 0.5rem;
+  min-height: 2.2em;
+}
+input.invalid {
+  border-color: var(--danger);
+}
+.photo-preview img {
+  width: 64px;
+  height: 64px;
+  border-radius: 60%;
+  border: 2px solid var(--primary);
+  margin: 0.55rem 0 0.77rem 0;
+  object-fit: cover;
+  background: var(--surface);
+}
+button[type="submit"] {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+.success-msg {
+  color: var(--success);
+  font-size: 1.03rem;
+  margin-top: 1.1rem;
+  display: inline-block;
+}
+.err-msg {
+  color: var(--danger);
+  font-size: 0.97rem;
+  margin-top: 1rem;
+  display: inline-block;
+}
+.settings-section {
+  margin: 2.4rem 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  justify-content: center;
+}
+.theme-btn {
+  background: var(--surface);
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+  border-radius: 0.7rem;
+  font-size: 1.05rem;
+  padding: 0.62rem 1.6rem;
+  margin-top: 0;
+  transition: background 0.18s;
+}
+.theme-btn:hover {
+  background: var(--primary);
+  color: var(--text-light);
+}
+@media (max-width: 600px) {
+  .edit-profile-container { max-width: 97vw; }
+}

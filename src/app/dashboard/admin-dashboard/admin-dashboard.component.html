@@ -1,0 +1,33 @@
+<div class="admin-dashboard">
+  <h2>Admin Dashboard</h2>
+  <div *ngIf="loading" class="loading-msg">Loading...</div>
+  <div class="stats-grid" *ngIf="!loading">
+    <div class="stat-card">
+      <span class="stat-number">{{ userCount }}</span>
+      <span class="stat-label">Total Users</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ providerCount }}</span>
+      <span class="stat-label">Providers</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ seekerCount }}</span>
+      <span class="stat-label">Seekers</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ skillCount }}</span>
+      <span class="stat-label">Skills/Services</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ bookingCount }}</span>
+      <span class="stat-label">Bookings</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">{{ reviewCount }}</span>
+      <span class="stat-label">Reviews</span>
+    </div>
+  </div>
+  <div class="admin-note">
+    <p>Use the admin menu to manage users, listings, review content, and platform health.</p>
+  </div>
+</div>

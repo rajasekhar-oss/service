@@ -1,0 +1,52 @@
+<div class="skill-detail-page" *ngIf="!loading && skill">
+  <div class="skill-main-card card">
+    <img [src]="skill.imageUrl" [alt]="skill.title" class="skill-image">
+    <div class="skill-meta">
+      <h2>{{ skill.title }}</h2>
+      <span class="cat-type">
+        <span class="skill-type-badge"
+          [ngClass]="{'badge-service': skill.type === 'do', 'badge-session': skill.type === 'teach'}">
+          {{ skill.type === 'do' ? 'Service' : 'Session' }}
+        </span>
+        <span class="cat">{{ skill.category }}</span>
+        <span class="location" *ngIf="skill.location">· {{ skill.location }}</span>
+      </span>
+      <div class="price-section">
+        <span class="price">₹{{ skill.price }}</span>
+        <span class="attendees" *ngIf="skill.maxAttendees">
+          Max: {{ skill.maxAttendees }} attendees
+        </span>
+      </div>
+      <p class="skill-desc">{{ skill.description }}</p>
+      <div class="dates" *ngIf="skill.schedule || skill.availability">
+        <span *ngIf="skill.type === 'teach' && skill.schedule">
+          <b>Upcoming Sessions:</b>
+          <span *ngFor="let s of skill.schedule" class="date-item">
+            {{ s | date:'medium' }}
+          </span>
+        </span>
+        <span *ngIf="skill.type === 'do' && skill.availability">
+          <b>Available Dates:</b>
+          <span *ngFor="let d of skill.availability" class="date-item">
+            {{ d | date:'mediumDate' }}
+          </span>
+        </span>
+      </div>
+      <button class="book-btn" (click)="bookOrEnroll()"
+        [disabled]="bookingSuccess">
+        {{ skill.type === 'do' ? 'Book Service' : 'Enroll in Session' }}
+      </button>
+      <span *ngIf="bookingSuccess" class="success-msg">
+        {{ skill.type === 'do' ? 'Service booked!' : 'Session enrolled!' }}
+      </span>
+    </div>
+  </div>
+  <div class="provider-card card" *ngIf="provider">
+    <img [src]="provider.photoUrl || 'assets/users/default.jpg'" class="provider-photo" [alt]="provider.name">
+    <div class="provider-info">
+      <div class="prov-name">{{ provider.name }}</div>
+      <div class="prov-bio">{{ provider.bio }}</div>
+    </div>
+  </div>
+</div>
+<div *ngIf="loading" class="loading-msg">Loading…</div>

@@ -1,0 +1,96 @@
+.dashboard-container {
+  max-width: 870px;
+  margin: 2.5rem auto 0 auto;
+  padding: 1.7rem 2vw;
+}
+h2 {
+  color: var(--primary-dark);
+  font-size: 2rem;
+  margin-bottom: 2.2rem;
+  font-weight: 700;
+  text-align: left;
+}
+.dashboard-section {
+  margin-bottom: 2.3rem;
+}
+.bookings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+.booking-card {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.35rem;
+  gap: 1.5rem;
+}
+.skill-thumb {
+  width: 70px;
+  height: 70px;
+  border-radius: 1rem;
+  object-fit: cover;
+  background: var(--surface);
+  border: 1.5px solid var(--card-border);
+}
+.booking-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+  gap: 0.6rem;
+}
+.skill-type-badge {
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.18em 0.8em;
+  border-radius: 0.6em;
+  margin-right: 1rem;
+}
+.badge-service {
+  background: var(--primary);
+  color: var(--text-light);
+}
+.badge-session {
+  background: var(--accent);
+  color: var(--background-dark);
+}
+.skill-title {
+  font-size: 1.13rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-left: 0.3rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.booking-date {
+  color: var(--primary);
+  font-size: 0.94rem;
+  margin-right: 1.6rem;
+}
+.booking-status {
+  font-size: 0.97rem;
+  font-weight: 600;
+  margin-right: 1.1rem;
+}
+.status-confirmed { color: var(--success); }
+.status-completed { color: var(--primary-dark); }
+.status-pending { color: var(--danger); }
+.view-booking-btn {
+  font-size: 0.93rem;
+  margin-top: 0.2rem;
+  padding: 0.4rem 1.1rem;
+}
+.empty-msg {
+  color: var(--danger);
+  margin-top: 1.4rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .dashboard-container { padding: 0.5rem 1vw; }
+  .booking-card { flex-direction: column; align-items: flex-start; }
+  .skill-thumb { margin-bottom: 1rem; }
+}
+

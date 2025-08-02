@@ -1,0 +1,56 @@
+.notif-page {
+  max-width: 700px;
+  margin: 2.8rem auto 0 auto;
+  padding: 1.2rem 2vw;
+}
+h2 {
+  color: var(--primary-dark);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+.notif-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+}
+.notif-card {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.15rem;
+  gap: 1.2rem;
+}
+.notif-type {
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.2em 0.8em;
+  border-radius: 0.7em;
+  margin-right: 0.7rem;
+  background: var(--surface);
+  color: var(--primary);
+}
+.notif-booking { background: var(--primary); color: var(--text-light); }
+.notif-review { background: var(--accent); color: var(--background-dark);}
+.notif-general { background: var(--surface); color: var(--primary-dark);}
+.notif-msg {
+  flex: 1;
+  font-size: 1.06rem;
+  color: var(--text);
+}
+.notif-time {
+  font-size: 0.91rem;
+  color: var(--primary-dark);
+  min-width: 110px;
+  text-align: right;
+}
+.empty-msg {
+  color: var(--danger);
+  font-size: 1.09rem;
+  margin-top: 2.3rem;
+  text-align: center;
+}
+.loading-msg {
+  color: var(--primary);
+  font-size: 1.05rem;
+  margin: 2rem 0;
+}

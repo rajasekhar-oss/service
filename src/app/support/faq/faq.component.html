@@ -1,0 +1,14 @@
+<div class="faq-page">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <div class="faq-card card" *ngFor="let f of faqs; index as i">
+      <div class="faq-q" (click)="toggleOpen(i)">
+        <span>{{ f.q }}</span>
+        <span class="faq-icon">{{ openIndexes.has(i) ? '▼' : '▶' }}</span>
+      </div>
+      <div class="faq-a" *ngIf="openIndexes.has(i)">
+        {{ f.a }}
+      </div>
+    </div>
+  </div>
+</div>

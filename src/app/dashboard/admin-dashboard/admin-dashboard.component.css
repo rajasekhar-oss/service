@@ -1,0 +1,54 @@
+.admin-dashboard {
+  max-width: 950px;
+  margin: 2.9rem auto 0 auto;
+  padding: 2.1rem 2vw;
+}
+h2 {
+  color: var(--primary-dark);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.6rem;
+}
+.stat-card {
+  background: var(--background-light);
+  border: 1.2px solid var(--card-border);
+  border-radius: 1.1rem;
+  padding: 2.2rem 1.1rem;
+  text-align: center;
+  box-shadow: 0 2px 14px 0 rgba(90,110,190,0.06);
+  transition: background 0.3s;
+}
+body.dark-mode .stat-card {
+  background: var(--background-dark);
+}
+.stat-number {
+  font-size: 2.4rem;
+  color: var(--primary);
+  font-weight: 800;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.stat-label {
+  color: var(--primary-dark);
+  font-size: 1.13rem;
+  font-weight: 600;
+}
+.loading-msg {
+  color: var(--primary);
+  font-size: 1.15rem;
+  margin: 2.2rem 0;
+}
+.admin-note {
+  margin-top: 2.3rem;
+  font-size: 1.03rem;
+  color: var(--text);
+  padding: 1.3rem 1rem 0.7rem 1rem;
+  border-radius: 1rem;
+  background: var(--surface);
+}

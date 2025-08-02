@@ -1,0 +1,38 @@
+<div class="register-container card">
+  <h2>Create your account</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="submit()">
+    <label>Name</label>
+    <input type="text" formControlName="name" maxlength="30"
+      [class.invalid]="registerForm.get('name')?.invalid && (registerForm.get('name')?.touched || registerForm.get('name')?.dirty)">
+    <div class="err-msg" *ngIf="registerForm.get('name')?.invalid && (registerForm.get('name')?.touched || registerForm.get('name')?.dirty)">
+      Please enter your name.
+    </div>
+
+    <label>Email</label>
+    <input type="email" formControlName="email"
+      [class.invalid]="registerForm.get('email')?.invalid && (registerForm.get('email')?.touched || registerForm.get('email')?.dirty)">
+    <div class="err-msg" *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.touched || registerForm.get('email')?.dirty)">
+      Please enter a valid email.
+    </div>
+
+    <label>Password</label>
+    <input type="password" formControlName="password" minlength="4"
+      [class.invalid]="registerForm.get('password')?.invalid && (registerForm.get('password')?.touched || registerForm.get('password')?.dirty)">
+    <div class="err-msg" *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.touched || registerForm.get('password')?.dirty)">
+      Please enter a password (min 4 chars).
+    </div>
+
+    <label>Account Type</label>
+    <select formControlName="role">
+      <option value="seeker">Seeker (Find/Book)</option>
+      <option value="provider">Provider (Offer Service/Teach)</option>
+    </select>
+
+    <button type="submit" [disabled]="loading">Register</button>
+    <div *ngIf="error" class="err-msg">{{ error }}</div>
+    <div class="loading" *ngIf="loading">Registering...</div>
+  </form>
+  <p class="login-link">
+    Already have an account? <a (click)="goToLogin()">Sign In</a>
+  </p>
+</div>

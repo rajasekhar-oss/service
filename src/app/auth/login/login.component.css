@@ -1,0 +1,56 @@
+.login-container {
+  max-width: 400px;
+  margin: 3.5rem auto 0 auto;
+}
+h2 {
+  text-align: center;
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+label {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-top: 0.7rem;
+  margin-bottom: 0.1rem;
+}
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  font-size: 1.07rem;
+  border: 1.5px solid var(--border);
+}
+input.invalid {
+  border-color: var(--danger);
+  background: #fff3f4 !important;
+}
+button[type="submit"] {
+  margin-top: 1.8rem;
+}
+.err-msg {
+  color: var(--danger);
+  font-size: 0.93rem;
+  margin-top: -0.3rem;
+  margin-bottom: 0.4rem;
+  min-height: 1.35em;
+}
+.loading {
+  color: var(--primary);
+  font-size: 0.98rem;
+  margin-top: 1rem;
+}
+.signup-link {
+  text-align: center;
+  margin: 1.8rem 0 0 0;
+  color: var(--text);
+  font-size: 1rem;
+}
+.signup-link a {
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+}

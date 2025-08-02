@@ -1,0 +1,99 @@
+.profile-view {
+  max-width: 750px;
+  margin: 2.8rem auto 0 auto;
+  padding: 1.4rem 2vw;
+}
+.profile-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2.3rem;
+}
+.profile-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--surface);
+  object-fit: cover;
+  border: 2px solid var(--primary);
+}
+.profile-info { flex: 1; }
+.user-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin: 0;
+}
+.role-badge {
+  display: inline-block;
+  margin: 0.35rem 0 0.8rem 0;
+  padding: 0.21em 0.9em;
+  border-radius: 0.9em;
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--primary);
+  color: var(--text-light);
+}
+.role-badge.provider { background: var(--primary);}
+.role-badge.seeker { background: var(--accent); color: var(--background-dark);}
+.role-badge.admin { background: var(--danger);}
+.user-bio { font-size: 1.06rem; margin-bottom: 0.6rem; color: var(--text);}
+.user-location {
+  font-size: 1.01rem;
+  color: var(--primary);
+  margin-top: 0.15rem;
+}
+.user-location .icon { margin-right: 0.42rem; }
+
+.user-skills-section { margin-top: 2.5rem; }
+h3 { color: var(--primary-dark); font-weight: 700; margin-bottom: 1.0rem; }
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+.skill-card {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  width: 330px;
+}
+.skill-photo {
+  width: 58px;
+  height: 58px;
+  border-radius: 0.7rem;
+  object-fit: cover;
+  background: var(--surface);
+  border: 1.5px solid var(--card-border);
+}
+.skill-meta { display: flex; flex-direction: column; gap: 0.16em; }
+.skill-type-badge {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.87rem;
+  padding: 0.16em 0.71em;
+  border-radius: 0.5em;
+  margin-bottom: 0.18rem;
+}
+.badge-service { background: var(--primary); color: var(--text-light); }
+.badge-session { background: var(--accent); color: var(--background-dark); }
+.skill-title { font-size: 1.08rem; font-weight: 600; color: var(--primary-dark);}
+.category { font-size: 0.97rem; color: var(--primary); }
+.price { font-size: 1rem; color: var(--primary-dark); font-weight: 700; }
+.rating { color: var(--success); font-size: 1rem; }
+.loading-msg {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-top: 2.2rem;
+  text-align: center;
+}
+.empty-msg {
+  color: var(--danger);
+  font-size: 1.04rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .skills-list, .profile-card { flex-direction: column; }
+  .skill-card { width: 100%; }
+}

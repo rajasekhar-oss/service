@@ -1,0 +1,91 @@
+.booking-detail-page {
+  max-width: 740px;
+  margin: 2.3rem auto 0 auto;
+  padding: 1.8rem 2vw;
+}
+h2 {
+  color: var(--primary-dark);
+  margin-bottom: 1.8rem;
+}
+.booking-main {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+  margin-bottom: 2.4rem;
+}
+.skill-img {
+  width: 82px;
+  height: 82px;
+  object-fit: cover;
+  border-radius: 1.14rem;
+  background: var(--surface);
+  border: 1.5px solid var(--card-border);
+}
+.booking-info { flex: 1; }
+.skill-title { font-size: 1.23rem; color: var(--primary-dark); font-weight: 700; margin-left: 0.7rem; }
+.type-badge {
+  font-weight: 600;
+  font-size: 0.99rem;
+  padding: 0.2em 0.75em;
+  border-radius: 0.8em;
+}
+.badge-service { background: var(--primary); color: var(--text-light);}
+.badge-session { background: var(--accent); color: var(--background-dark);}
+.skill-price { font-size: 1rem; color: var(--primary); font-weight: 600;}
+.booking-date { font-size: 1rem; color: var(--text);}
+.booking-status {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 0.7rem;
+}
+.status-confirmed { color: var(--success);}
+.status-completed { color: var(--primary-dark);}
+.status-pending { color: var(--danger);}
+.booking-users {
+  display: flex;
+  gap: 2.1rem;
+  flex-wrap: wrap;
+}
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  min-width: 240px;
+  flex: 1;
+}
+.user-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--surface);
+  object-fit: cover;
+  border: 2px solid var(--primary);
+}
+.user-info { display: flex; flex-direction: column; gap: 0.2rem; }
+.role-badge {
+  display: inline-block;
+  padding: 0.16em 0.7em;
+  border-radius: 0.7em;
+  font-size: 0.97rem;
+  font-weight: 700;
+  margin-bottom: 0.21rem;
+}
+.seeker-badge { background: var(--accent); color: var(--background-dark);}
+.provider-badge { background: var(--primary); color: var(--text-light);}
+.user-name { font-size: 1.13rem; font-weight: 700; color: var(--primary-dark);}
+.user-phone { font-size: 0.98rem; color: var(--primary); }
+.loading-msg {
+  color: var(--primary);
+  font-size: 1rem;
+  margin: 2.3rem 0;
+  text-align: center;
+}
+.empty-msg {
+  color: var(--danger);
+  font-size: 1.11rem;
+  margin: 2.1rem 0;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .booking-main, .booking-users { flex-direction: column; gap: 1rem;}
+}
